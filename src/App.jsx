@@ -17,7 +17,7 @@ export default function App() {
         <p id="list-message" role="status">게시글 목록</p>
         <button id="retry-list" type="button">목록 다시 시도</button>
 
-        <PostList posts={posts} />
+        <PostList posts={posts} onSelect={(post) => window.alert(post.title)} />
 
         <div className="pagination" aria-label="페이지 이동">
           <button id="previous-page" type="button" disabled>이전</button>
