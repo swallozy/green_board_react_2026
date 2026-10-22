@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BoardFooter from "./components/BoardFooter";
 import BoardHeader from "./components/BoardHeader";
+import PostForm from './components/PostForm';
 import PostList from "./components/PostList";
 import "./style.css";
 
@@ -13,7 +14,7 @@ export default function App() {
   const [page, setPage] = useState("list");
 
   function addPracticePost() {
-    const id = Data.now();
+    const id = Date.now();
     setPosts((currentPosts) => [
       { id, title: `임시 게시글 ${currentPosts.length}`, authorNickname: "학생", createdDatetime: "2026-10-04" },
       ...currentPosts,
@@ -38,7 +39,7 @@ export default function App() {
         <button id="retry-list" type="button">목록 다시 시도</button>
 
         <PostList posts={posts} onSelect={(post) => window.alert(post.title)} />
-        <button type="button" oonClick={addPracticePost}>임시 게시글 추가</button>
+        <button type="button" onClick={addPracticePost}>임시 게시글 추가</button>
 
         <div className="pagination" aria-label="페이지 이동">
           <button id="previous-page" type="button" disabled>이전</button>

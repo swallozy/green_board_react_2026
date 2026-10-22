@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function PostForm(onSave, onCancel) {
+export default function PostForm({ onSave, onCancel }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [message, setMessage] = useState("");
@@ -9,7 +9,7 @@ export default function PostForm(onSave, onCancel) {
         event.preventDefault();
         const trimmedTitle = title.trim();
         const trimmedContent = content.trim();
-        if (trimmedTitle.length < 10 || trimmedTitle > 50 || trimmedContent.length < 10) {
+        if (trimmedTitle.length < 10 || trimmedTitle.length > 50 || trimmedContent.length < 10) {
             setMessage("제목은 10~50자, 본문은 10자 이상 입력");
             return;
         }
