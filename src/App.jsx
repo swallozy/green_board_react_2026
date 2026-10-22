@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import BoardFooter from "./components/BoardFooter";
 import BoardHeader from "./components/BoardHeader";
 import PostForm from './components/PostForm';
 import PostList from "./components/PostList";
+import PostDetail from "./components/PostDetail";
+import Login from "./components/Login";
 import "./style.css";
 
 export default function App() {
@@ -32,15 +35,14 @@ export default function App() {
 
   return (
     <>
-      <BoardHeader onWrite={() => setPage("write")} />
-      {page === "list" && <main>
-        
-      </main>}
-      {page === "write" && <main>
-        <h1>글쓰기</h1>
-        <PostForm onSave={savePost} onCancel={() => setPage("list")} />
-      </main>}
-
+      <BoardHeader />
+      <Routes>
+        <Route path="/" element={<PostList posts={posts} onAddPractivePost={addPracticePost} />} />
+        <Route path="/posts" element={<PostList posts={posts} onAddPractivePost={addPracticePost} />} />
+        <Route path="/posts/new" element={<PostForm onSave={savePost} />} />
+        <Route path="/post/:postId" element={<PostDetail />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <BoardFooter />
     </>
   )
