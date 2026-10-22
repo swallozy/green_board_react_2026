@@ -14,8 +14,6 @@ export default function App() {
     { id: 2, title: "두 번째 게시글", authorNickname: "강사", createdDatetime: "2026-10-04", content: "바나나" },
   ]);
 
-  const [page, setPage] = useState("list");
-
   function addPracticePost() {
     const id = Date.now();
     setPosts((currentPosts) => [
@@ -29,8 +27,6 @@ export default function App() {
       { id: Date.now(), ...post, authorNickname: "학생", createdDatetime: "2026-10-04" },
       ...currentPosts,
     ]);
-
-    setPage("list");
   }
 
   return (

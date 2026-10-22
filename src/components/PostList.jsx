@@ -7,7 +7,7 @@ export default function PostList({ posts, onAddPractivePost }) {
         <button id="retry-list" type="button">목록 다시 시도</button>
 
         <PostListItem posts={posts} />
-        <button type="button" onClick={addPracticePost}>임시 게시글 추가</button>
+        <button type="button" onClick={onAddPractivePost}>임시 게시글 추가</button>
 
         <div className="pagination" aria-label="페이지 이동">
             <button id="previous-page" type="button" disabled>이전</button>
@@ -17,7 +17,7 @@ export default function PostList({ posts, onAddPractivePost }) {
     </main>
 }
 
-export default function PostListItem({ posts }) {
+function PostListItem({ posts }) {
     return (
         <ul id="post-list" className="post-list">
             {posts.map((post) => <PostItem key={post.id} post={post} />)}
