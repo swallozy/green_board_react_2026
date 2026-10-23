@@ -38,9 +38,9 @@ export default function App() {
         <Route path="/" element={<PostList posts={posts} onAddPractivePost={addPracticePost} />} />
         <Route path="/posts" element={<PostList posts={posts} onAddPractivePost={addPracticePost} />} />
         <Route path="/posts/new" element={<PostForm onSave={savePost} />} />
-        <Route path="/post/:postId" element={<PostDetail />} />
+        <Route path="/posts/:postId" element={<PostDetail posts={posts} />} />
         <Route path="/login" element={<Login onLogin={() => setIsLoggedIn(true)} />} />
-      </Routes> 
+      </Routes>
       <BoardFooter />
     </>
   )
