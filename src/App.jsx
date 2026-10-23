@@ -40,7 +40,7 @@ export default function App() {
         <Route path="/posts/new" element={<PostForm onSave={savePost} />} />
         <Route path="/post/:postId" element={<PostDetail />} />
         <Route path="/login" element={<Login onLogin={() => setIsLoggedIn(true)} />} />
-      </Routes>
+      </Routes> 
       <BoardFooter />
     </>
   )
