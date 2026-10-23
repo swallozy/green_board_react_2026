@@ -1,4 +1,4 @@
-import { userSearchParams, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import PostItem from "./PostItem";
 
 export default function PostList({ posts, onAddPractivePost }) {
