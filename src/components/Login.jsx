@@ -1,7 +1,7 @@
-export default function Login() {
+export default function Login({ onLogin }) {
     return <main>
         <h1>로그인</h1>
-        <form id="login-form">
+        <form id="login-form" onSubmit={(event) => { event.preventDefault(); onLogin(); }}>
             <label htmlFor="username">아이디</label>
             <input id="username" name="username" />
             <label htmlFor="password">비밀번호</label>
@@ -9,5 +9,5 @@ export default function Login() {
             <p id="login-message" role="alert" hidden></p>
             <button type="submit">로그인</button>
         </form>
-    </main>
+    </main >
 }
